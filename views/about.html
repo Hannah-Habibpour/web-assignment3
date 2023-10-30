@@ -1,0 +1,85 @@
+// <!-----------------------------------------------------------------------------------
+    // *  WEB322 – Assignment 03
+    // * 
+    // *  I declare that this assignment is my own work in accordance with Seneca's
+    // *  Academic Integrity Policy:
+    // * 
+    // *  https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
+    // * 
+    // *  Name: Hannaneh Habibpour         Student ID: 185186210      Date: 29-10-2023
+    // *
+    // *  Published URL: 
+    // *
+    // ------------------------------------------------------------------------------------>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="flex items-center justify-between p-6 bg-blue-500">
+        <p class="text-white text-2xl font-bold">About me</p>
+        <div class="flex items-center space-x-4">
+            <a href="/" class="active text-white">Home</a>
+            <div class="relative inline-block text-left">
+                <button class="text-white" onclick="toggleDropdown()">Theme</button>
+                <div id="theme-dropdown" class="absolute z-50 left-0 mt-2 space-y-2 bg-white border rounded-md shadow-lg hidden">
+                    <ul class="p-2 bg-base-100" style="font-size: large; color: skyblue;">
+                        <li><a href="/lego/sets?theme=books">Books</a></li>
+                        <li><a href="/lego/sets?theme=technic">Technic</a></li>
+                        <li><a href="/lego/sets?theme=playhouse">Playhouse</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero mt-6">
+        <div class="">
+            <button class="btn btn-primary"> 
+                <a href="https://github.com/Hannah-Habibpour">My GitHub</a>
+            </button>
+        </div>
+    </div>
+
+    <!-- Container -->
+    <div class="container mx-auto mt-8">
+
+        <!-- Grid System -->
+        <div class="grid grid-cols-2 gap-6 mt-8">
+            <!-- Left Column - Image -->
+            <div class="bg-white p-6 rounded-md">
+                <img src="data:image/jpeg;base64,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" 
+                alt="My Image" 
+                class="w-1/2 h-auto"
+                >
+            </div>
+
+            <!-- Right Column - Blurb -->
+            <div id="about" class="bg-white p-6 rounded-md">
+                <h2 class="text-xl font-bold">Hello, I'm Hannah</h2>
+                <p class="text-gray-600">Currently I'm a student in seneca college. I like creation and I like to learn different skills so that is why I choose CPP program.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Inline JavaScript for Theme Toggle -->
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('theme-dropdown');
+            if (dropdown.classList.contains('hidden')) {
+                dropdown.classList.remove('hidden');
+            } else {
+                dropdown.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
