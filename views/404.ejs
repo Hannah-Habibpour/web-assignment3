@@ -1,0 +1,45 @@
+<!-----------------------------------------------------------------------------------
+    // *  WEB322 – Assignment 03
+    // * 
+    // *  I declare that this assignment is my own work in accordance with Seneca's
+    // *  Academic Integrity Policy:
+    // * 
+    // *  https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
+    // * 
+    // *  Name: Hannaneh Habibpour         Student ID: 185186210      Date: 29-10-2023
+    // *
+    // *  Published URL: https://relieved-ant-cowboy-hat.cyclic.app/
+    // *
+    // ------------------------------------------------------------------------------------>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Page Not Found</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <%- include('partials/navbar', { page: page }) %>
+    <!-- Container -->
+    <div class="container mx-auto mt-8">
+      <!-- Hero Section -->
+      <div class="p-6 bg-gray-200">
+        <h1 class="text-4xl font-bold">404 Not Found</h1>
+        <p class="text-lg">
+          Oops! The page you are looking for does not exist.
+        </p>
+      </div>
+
+      <!-- 404 Image -->
+      <div class="flex justify-center items-center mt-8">
+        <img
+          src="/images/404_image.jpg"
+          alt="404 Image"
+          class="w-full h-auto"
+        />
+      </div>
+    </div>
+  </body>
+</html>

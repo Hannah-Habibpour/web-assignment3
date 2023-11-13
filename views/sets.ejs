@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>View Data</title>
+  </head>
+
+  <body>
+    <table border="1">
+      <tr>
+        <th>Set Number</th>
+        <th>Name</th>
+        <th>Year</th>
+        <th>Theme ID</th>
+        <th>Parts Number</th>
+        <th>Image URL</th>
+      </tr>
+      <% data.forEach(function(item) { %>
+      <tr>
+        <td><%= item.set_num %></td>
+        <td><%= item.name %></td>
+        <td><%= item.year %></td>
+        <td><%= item.theme_id %></td>
+        <td><%= item.num_parts %></td>
+        <td><%= item.img_url %></td>
+      </tr>
+      <% }); %>
+    </table>
+  </body>
+</html>

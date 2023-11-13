@@ -1,0 +1,51 @@
+<!-----------------------------------------------------------------------------------
+    // *  WEB322 – Assignment 03
+    // * 
+    // *  I declare that this assignment is my own work in accordance with Seneca's
+    // *  Academic Integrity Policy:
+    // * 
+    // *  https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
+    // * 
+    // *  Name: Hannaneh Habibpour         Student ID: 185186210      Date: 29-10-2023
+    // *
+    // *  Published URL: https://relieved-ant-cowboy-hat.cyclic.app
+    // *
+    // ------------------------------------------------------------------------------------>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <%- include('partials/navbar', {page: '/about'}) %>
+    <!-- Hero Section -->
+    <div class="hero mt-6">
+      <div class="">
+        <button class="btn btn-primary">
+          <a href="https://github.com/Hannah-Habibpour">My GitHub</a>
+        </button>
+      </div>
+    </div>
+
+    <!-- Container -->
+    <div class="container mx-auto mt-8">
+      <!-- Grid System -->
+      <div class="grid grid-cols-2 gap-6 mt-8">
+        <!-- Left Column - Image -->
+        <div class="bg-white p-6 rounded-md">
+          <img src="<%= imageUrl %>" alt="My Image" class="w-1/2 h-auto" />
+        </div>
+
+        <!-- Right Column - Blurb -->
+        <div id="about" class="bg-white p-6 rounded-md">
+          <h2 class="text-xl font-bold">Hello, I'm <%= name %></h2>
+          <p class="text-gray-600"><%= description %></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!-- Navbar -->
+<nav class="flex items-center justify-between p-6 bg-blue-500">
+  <div class="flex items-center space-x-4">
+    <a href="/" class="active text-white">Home</a>
+    <a href="/about" class="active text-white">About</a>
+    <div class="relative inline-block text-left">
+      <button class="text-white" onclick="toggleDropdown()">Theme</button>
+      <div
+        id="theme-dropdown"
+        class="absolute z-50 left-0 mt-2 space-y-2 bg-white border rounded-md shadow-lg hidden"
+      >
+        <ul class="p-2 bg-base-100" style="font-size: large; color: skyblue">
+          <li><a href="/lego/sets?theme=books">Books</a></li>
+          <li><a href="/lego/sets?theme=technic">Technic</a></li>
+          <li><a href="/lego/sets?theme=playhouse">Playhouse</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Inline JavaScript for Theme Toggle -->
+<script>
+  function toggleDropdown() {
+    const dropdown = document.getElementById("theme-dropdown");
+    if (dropdown.classList.contains("hidden")) {
+      dropdown.classList.remove("hidden");
+    } else {
+      dropdown.classList.add("hidden");
+    }
+  }
+</script>

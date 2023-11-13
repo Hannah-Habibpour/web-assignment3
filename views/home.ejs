@@ -1,0 +1,59 @@
+<!-----------------------------------------------------------------------------------
+    // *  WEB322 – Assignment 03
+    // * 
+    // *  I declare that this assignment is my own work in accordance with Seneca's
+    // *  Academic Integrity Policy:
+    // * 
+    // *  https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
+    // * 
+    // *  Name: Hannaneh Habibpour         Student ID: 185186210      Date: 29-10-2023
+    // *
+    // *  Published URL: https://relieved-ant-cowboy-hat.cyclic.app
+    // *
+    // ------------------------------------------------------------------------------------>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Lego Collection</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <%- include('partials/navbar', {page: '/'}) %>
+    <!-- Hero Section -->
+    <section class="bg-blue-100 p-10">
+      <div class="container mx-auto">
+        <div class="text-center">
+          <h1 class="text-4xl font-bold">Welcome to the Lego Collection</h1>
+          <p class="mt-4 text-lg">
+            Explore our amazing collection of Lego sets.
+          </p>
+          <a href="/lego/sets" class="btn mt-6">Explore Sets</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lego Set Grid -->
+    <section class="py-10">
+      <div
+        class="container mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6"
+      >
+        <% legoSets.forEach(function(set) { %>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <img
+            src="<%= set.imageUrl %>"
+            alt="Lego Set Image"
+            class="w-full h-64 object-cover"
+          />
+          <div class="p-4">
+            <h2 class="text-xl font-semibold"><%= set.name %></h2>
+            <a href="/lego/sets/<%= set.id %>" class="btn mt-4">View Set</a>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </section>
+  </body>
+</html>

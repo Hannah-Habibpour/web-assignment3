@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Container -->
+    <div class="container mx-auto mt-8">
+      <!-- Grid System -->
+      <div class="grid grid-cols-2 gap-6 mt-8">
+        <!-- Left Column - Image -->
+        <div class="bg-white p-6 rounded-md">
+          <img src="<%= data.img_url %>" alt="Image" class="w-1/2 h-auto" />
+        </div>
+
+        <!-- Right Column - Blurb -->
+        <div id="about" class="bg-white p-6 rounded-md">
+          <p class="text-gray-600">Set Number: <%= data.set_num %></p>
+          <p class="text-gray-600">Name: <%= data.name %></p>
+          <p class="text-gray-600">Year: <%= data.year %></p>
+          <p class="text-gray-600">Theme: <%= data.theme %></p>
+          <p class="text-gray-600">Parts Number: <%= data.num_parts %></p>
+        </div>
+      </div>
+
+      <!-- Quote Section -->
+      <div id="quote" class="mt-8 p-4 bg-gray-100 rounded-md">
+        <p id="quote-content" class="text-gray-800 text-lg"></p>
+        <p id="quote-author" class="text-gray-600 text-sm mt-2"></p>
+      </div>
+
+      <!-- Back Button -->
+      <div class="mt-4">
+        <a
+          href="#"
+          onclick="history.back(); return false;"
+          class="text-blue-600 hover:text-blue-800"
+          >Go Back</a
+        >
+      </div>
+    </div>
+
+    <!-- AJAX Request for Random Quote -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        fetch("https://quotable.io/random")
+          .then((response) => response.json())
+          .then((data) => {
+            const quoteContent = document.getElementById("quote-content");
+            const quoteAuthor = document.getElementById("quote-author");
+            quoteContent.textContent = `"${data.content}"`;
+            quoteAuthor.textContent = `- ${data.author}`;
+          })
+          .catch((error) => {
+            console.error("Error fetching the quote:", error);
+          });
+      });
+    </script>
+  </body>
+</html>
